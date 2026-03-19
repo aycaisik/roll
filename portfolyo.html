@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınırsız Portfolyo | Roll Event Lab</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="Roll Event Lab Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html#anasayfa">Ana Sayfa</a></li>
+                <li><a href="index.html#hizmetler">Hizmetlerimiz</a></li>
+                <li><a href="portfolyo.html">Portfolyo</a></li>
+                <li><a href="biz-kimiz.html">Biz Kimiz</a></li>
+                <li><a href="index.html#iletisim">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filtre Başlık Bölümü -->
+    <section class="portfolio-page-header">
+        <div class="container" style="text-align: center;">
+            <h1 class="section-title">Neler Yaptık?</h1>
+            <p class="section-subtitle">Ayrıcalıklı dünyamızdan bazı anlar</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="konser">Konser & Festival</button>
+                <button class="filter-btn" data-filter="kurumsal">Kurumsal Etkinlik</button>
+                <button class="filter-btn" data-filter="ozel-gun">Özel Günler</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Duvarı -->
+    <main class="container portfolio-grid-container">
+        <div class="portfolio-gallery" id="portfolioGallery">
+            <!-- KONSERLER -->
+            <div class="gallery-item" data-category="konser" data-title="Sena Şener Sahnesi" data-desc="Eşsiz senfonik dokunuşlar ve modern sahne tasarımımızla gerçekleşen unutulmaz performans." data-images="images/senasener.JPG, images/canozan.JPG, images/manga.JPG, images/tnk.JPG">
+                <img src="images/senasener.JPG" alt="Sena Şener" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Sena Şener</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="Pinhani Rüzgarı" data-desc="Mabolla katılımlı yüksek voltajlı gösteri için ışık, ses ve sahne sanatları birimi tarafından detaylı konseptlendirme yapıldı." data-images="images/pinhani.JPG, images/senasener.JPG">
+                <img src="images/pinhani.JPG" alt="Pinhani" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Pinhani Etkinliği</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="maNga ile Efsane Gece" data-desc="Devasa LED paneller ve eşsiz ses donanımlarıyla kusursuz bir rock şöleni.">
+                <img src="images/manga.JPG" alt="maNga" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>maNga Konseri</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="TNK Performansı" data-desc="TNK gurubunun ruhuna uyan, dinamik bass kurgularıyla mekana entegre edilen özel mimari sahne.">
+                <img src="images/tnk.JPG" alt="TNK" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>TNK Bar Sahnesi</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="Can Ozan Akustik" data-desc="Enerjinin hiç düşmediği akustik parti. Renk ışık ve tamamen katılımcı deneyimi odaklı tasarım uygulandı.">
+                <img src="images/canozan.JPG" alt="Can Ozan" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Can Ozan</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="Melike Özdemir Konseri" data-desc="Akustik harikalarına ev sahipliği yapan butik bir salon düzenlemesi.">
+                <img src="images/melike-ozdemir-saloon.jpg" alt="Melike Özdemir" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Melike Özdemir</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="konser" data-title="Aykoç Çözümleri" data-desc="Senkronize robot ışık ve konfeti efektleriyle süslenmiş eşsiz performans.">
+                <img src="images/aykoc-mabolla.jpeg" alt="Aykoç" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Aykoç Etkinliği</h3>
+                    <span>Konser & Festival</span>
+                </div>
+            </div>
+
+            <!-- KURUMSAL -->
+            <div class="gallery-item" data-category="kurumsal" data-title="Stand Up Organizasyon" data-desc="Mabolla Center'da izleyiciyle doğrudan interaktif bir akış sağlama gayesiyle stand-up tasarımı.">
+                <img src="images/bar-psikologu-standup.jpeg" alt="Bar Psikoloğu" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Bar Psikoloğu</h3>
+                    <span>Kurumsal Etkinlik</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="kurumsal" data-title="Marka Lansmanı" data-desc="Yaratıcı teknik prodüksiyon ve sahne mapping tasarımı uygulandı.">
+                <img src="https://images.unsplash.com/photo-1540039155732-d688755b34be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lansman" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Premium Kokteyl Konsepti</h3>
+                    <span>Kurumsal Etkinlik</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="kurumsal" data-title="Uluslararası Zirve" data-desc="Etkili paneller için üst düzey mikrofonlama, çeviri ve reji hizmetleri.">
+                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Zirve" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Vizyoner Zirve</h3>
+                    <span>Kurumsal Etkinlik</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="kurumsal" data-title="Gala Yemeği Geccesi" data-desc="Zarif ve lüks dokunuşlarla hazırlanan, ünlü sanatsal figürler için kurulmuş yemekli gala.">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gala" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Büyük Gala Yemeği</h3>
+                    <span>Kurumsal Etkinlik</span>
+                </div>
+            </div>
+
+            <!-- OZEL GUNLER -->
+            <div class="gallery-item" data-category="ozel-gun" data-title="Vintage Temalı Düğün" data-desc="Çiftlerimizin hayatlarının en unutulmaz gününü aydınlatan büyüleyici masalsı sofra sunumları.">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Düğün" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Büyülü Düğün Merasimi</h3>
+                    <span>Özel Günler</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="ozel-gun" data-title="Kültürel Sergi Lansmanı" data-desc="Eserlerin o muhteşem değerin doğru odak aydınlatmaları kullanılarak ön plana çıkarılması.">
+                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sergi" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Kültür ve Sanat Sergisi</h3>
+                    <span>Özel Günler</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="ozel-gun" data-title="Yaz Gençlik Buluşması" data-desc="Gönüllerince eğlenilebilecek rahat atmosferlerde bol köpüklü, müzik dolu yaz aktiviteleri.">
+                <img src="https://images.unsplash.com/photo-1456947231454-94939223e7f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gençlik" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Mabolla Yaz Partisi</h3>
+                    <span>Özel Günler</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="ozel-gun" data-title="Sürpriz Temalı Parti" data-desc="Özel parti kutlamaları çerçevesinde yaratılmış retro-futuristik tasarım stili ile unutulmaz bir deneyim.">
+                <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Parti" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Sürpriz Temalı Etkinlik</h3>
+                    <span>Özel Günler</span>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Modal (Pop-up) Container -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Kapat">&times;</button>
+            <div class="modal-image" id="modalImageContainer">
+                <img src="" alt="Proje" id="modalImage">
+            </div>
+            <div class="modal-text">
+                <h2 id="modalTitle">Proje Başlığı</h2>
+                <p id="modalDesc">Proje Detayları</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
+
+
