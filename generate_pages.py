@@ -13,7 +13,7 @@ base_html = """<!DOCTYPE html>
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">ROLL<span>EVENT LAB</span></a>
+            <a href="index.html" class="logo"><img src="images/headerlogo.svg" alt="Roll Event Lab Logo"></a>
             <ul class="nav-links">
                 <li><a href="index.html#anasayfa">Ana Sayfa</a></li>
                 <li><a href="index.html#hizmetler">Hizmetlerimiz</a></li>
@@ -48,7 +48,7 @@ base_html = """<!DOCTYPE html>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">ROLL<span>EVENT LAB</span></a>
+                    <a href="index.html" class="logo"><img src="images/footer.svg" alt="Roll Event Lab Logo"></a>
                     <p>Etkinliklerinize profesyonel dokunuş.</p>
                 </div>
                 <div class="footer-social">
