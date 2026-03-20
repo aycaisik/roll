@@ -14,11 +14,12 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--dark);
+    color: white;
     line-height: 1.6;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,11 +38,12 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
     padding: 15px 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar .container {
@@ -80,13 +82,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: white;
 }
 
 .nav-item-has-dropdown {
@@ -101,24 +103,27 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 0;
     margin: 0;
     min-width: 190px;
-    background: #fff;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    border-radius: 12px;
+    background: rgba(20, 20, 22, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
     display: none;
     z-index: 1100;
 }
 
 .nav-dropdown li a {
     display: block;
-    padding: 8px 16px;
+    padding: 10px 16px;
     font-size: 0.9rem;
-    color: var(--dark);
+    color: rgba(255, 255, 255, 0.8);
     white-space: nowrap;
 }
 
 .nav-dropdown li a:hover {
-    background: rgba(108, 99, 255, 0.06);
-    color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
 }
 
 @media (hover: hover) {
@@ -137,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--dark);
+    background: white;
     transition: 0.3s;
 }
 
@@ -240,7 +245,22 @@ h1, h2, h3, h4, h5, h6 {
 /* Services */
 .services {
     padding: 150px 0;
-    background: var(--light);
+    background: transparent;
+    position: relative;
+}
+.services::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.15;
+    bottom: -200px;
+    left: -200px;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .services-grid {
@@ -250,19 +270,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 28px 22px;
     border-radius: 20px;
     text-align: center;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
     display: block;
-    color: inherit;
+    color: white;
 }
 
 .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
@@ -272,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card h3 {
     margin-bottom: 15px;
-    color: var(--dark);
+    color: white;
 }
 
 .service-card p {
@@ -340,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-sub-sections {
     padding: 150px 0;
-    background: var(--light);
+    background: transparent;
 }
 
 .sub-service-row {
@@ -370,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 400px;
     object-fit: cover;
     display: block;
-    background: #eef2f5;
+    background: #111;
 }
 
 .sub-service-text {
@@ -473,6 +496,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Portfolio (Homepage) */
 .portfolio {
     padding: 150px 0;
+    position: relative;
+}
+.portfolio::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.15;
+    top: 50%;
+    right: -200px;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .portfolio-grid {
@@ -546,7 +584,7 @@ h1, h2, h3, h4, h5, h6 {
 /* About */
 .about {
     padding: 150px 0;
-    background: var(--light);
+    background: transparent;
 }
 
 .about-cards {
@@ -557,11 +595,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 30px 24px;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    color: white;
 }
 
 .about-card-icon {
@@ -582,7 +623,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-text .lead {
     font-size: 1.1rem;
-    color: var(--dark);
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -617,6 +658,22 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact */
 .contact {
     padding: 150px 0;
+    position: relative;
+}
+.contact::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.15;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .contact-wrapper {
@@ -651,11 +708,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-form input,
 .contact-form textarea {
-    padding: 10px 15px;
-    border: 2px solid #eee;
-    border-radius: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 12px;
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: border-color 0.3s;
 }
 
@@ -663,6 +722,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 /* Footer */
@@ -1094,7 +1154,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ------------------------------------------- */
 .portfolio-marquee-section {
     padding: var(--section-padding) 0;
-    background: var(--light);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -1123,12 +1183,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .hm-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, var(--light) 0%, transparent 100%);
+    background: linear-gradient(to right, #000 0%, transparent 100%);
 }
 
 .hm-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, var(--light) 0%, transparent 100%);
+    background: linear-gradient(to left, #000 0%, transparent 100%);
 }
 
 .hm-track {
@@ -1213,7 +1273,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-page-header {
     padding-top: 150px;
     padding-bottom: 40px;
-    background: var(--light);
+    background: transparent;
 }
 
 .portfolio-filters {
