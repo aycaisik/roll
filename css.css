@@ -466,6 +466,31 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.card-action {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.4s ease;
+}
+
+.card-action span {
+    font-size: 1.1rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+}
+
+.service-card:hover .card-action {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.service-card:hover .card-action span {
+    transform: translateX(4px);
+    color: var(--primary);
+}
+
 .service-card p {
     color: var(--gray);
 }
