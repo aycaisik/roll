@@ -759,6 +759,10 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.footer-brand .logo img {
+    height: 85px;
+}
+
 .footer-brand p {
     margin-top: 10px;
     opacity: 0.7;
@@ -931,6 +935,14 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+
+    .footer-brand .logo img {
+        height: 110px;
     }
 
     .footer-social {
