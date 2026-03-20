@@ -12,6 +12,11 @@
     --gray: #86868b;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: white;
@@ -653,6 +658,14 @@ h1, h2, h3, h4, h5, h6 {
 .stat-label {
     color: var(--gray);
     font-size: 0.9rem;
+}
+
+.about-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: 50px auto 0;
 }
 
 /* Contact */
