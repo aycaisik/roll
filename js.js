@@ -102,25 +102,30 @@ if(form) {
     });
 }
 
-// Add animation on scroll
+// Add animation on scroll (Staggered Apple-style)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
+    let delay = 0;
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, delay);
+            delay += 120; // Staggered delay of 120ms
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+document.querySelectorAll('.service-card, .portfolio-item, .about-card, .sub-service-image, .sub-service-text, .contact-item').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
     observer.observe(el);
 });
 
