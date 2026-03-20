@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -38,10 +38,10 @@ const form = document.getElementById('iletisim-formu');
 const formStatus = document.getElementById('form-status');
 const submitButton = document.getElementById('submit-button');
 
-if(form) {
+if (form) {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         // Gönderim sırasında butonu kilitle ve bildirim göster
         const originalBtnText = submitButton.textContent;
         submitButton.textContent = 'Gönderiliyor...';
@@ -91,10 +91,10 @@ if(form) {
         } finally {
             submitButton.textContent = originalBtnText;
             submitButton.disabled = false;
-            
+
             // Eğer başarılı olduysa durumu birkaç saniye sonra gizle
             setTimeout(() => {
-                if(formStatus.style.background === 'rgb(40, 167, 69)' || formStatus.style.background === '#28a745') {
+                if (formStatus.style.background === 'rgb(40, 167, 69)' || formStatus.style.background === '#28a745') {
                     formStatus.style.display = 'none';
                 }
             }, 6000);
@@ -174,7 +174,7 @@ if (modal) {
     const modalDesc = document.getElementById('modalDesc');
     const closeBtn = document.querySelector('.modal-close');
     const scrollItems = document.querySelectorAll('.scroll-item, .gallery-item');
-    
+
     let sliderInterval;
 
     scrollItems.forEach(item => {
@@ -182,11 +182,11 @@ if (modal) {
             const imgEl = item.querySelector('img');
             const title = item.getAttribute('data-title') || 'Proje Detayı';
             const desc = item.getAttribute('data-desc') || 'Bu etkinlik için mekanın ruhuna ve projenin konseptine uygun olarak Roll Event Lab tarafından yaratıcı teknik ve görsel çözümler tasarlanmıştır.';
-            
+
             // Check for multiple images via data-images attr
             const dataImages = item.getAttribute('data-images');
             let images = [];
-            
+
             if (dataImages) {
                 images = dataImages.split(',').map(s => s.trim()).filter(s => s);
             } else {
@@ -195,16 +195,16 @@ if (modal) {
 
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
-            
+
             // Build Slider HTML
             let sliderHTML = `<div class="modal-slider"><div class="slider-track" id="sliderTrack">`;
-            
+
             images.forEach(src => {
                 sliderHTML += `<div class="slider-slide"><img src="${src}" alt="Slider Resim"></div>`;
             });
-            
+
             sliderHTML += `</div>`;
-            
+
             // Add Controls if there are multiple images
             if (images.length > 1) {
                 sliderHTML += `
@@ -217,38 +217,38 @@ if (modal) {
                 });
                 sliderHTML += `</div>`;
             }
-            
+
             sliderHTML += `</div>`;
             modalImageContainer.innerHTML = sliderHTML;
-            
+
             // Slider Interaction Logic
             if (images.length > 1) {
                 const track = document.getElementById('sliderTrack');
                 const btnPrev = document.getElementById('sliderPrev');
                 const btnNext = document.getElementById('sliderNext');
                 const dots = document.querySelectorAll('.slider-dot');
-                
+
                 let currentSlide = 0;
-                
+
                 const updateSlider = () => {
                     track.style.transform = `translateX(-${currentSlide * 100}%)`;
                     dots.forEach(dot => dot.classList.remove('active'));
-                    if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+                    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
                 };
-                
+
                 const nextSlide = () => {
                     currentSlide = (currentSlide + 1) % images.length;
                     updateSlider();
                 };
-                
+
                 const prevSlide = () => {
                     currentSlide = (currentSlide - 1 + images.length) % images.length;
                     updateSlider();
                 };
-                
+
                 btnNext.addEventListener('click', nextSlide);
                 btnPrev.addEventListener('click', prevSlide);
-                
+
                 dots.forEach(dot => {
                     dot.addEventListener('click', (e) => {
                         currentSlide = parseInt(e.target.getAttribute('data-idx'));
@@ -256,19 +256,19 @@ if (modal) {
                         resetInterval();
                     });
                 });
-                
+
                 // Auto Play Slider
                 const startInterval = () => sliderInterval = setInterval(nextSlide, 3500);
                 const resetInterval = () => { clearInterval(sliderInterval); startInterval(); };
-                
+
                 startInterval();
-                
+
                 // Pause slider on hover
                 const modalSlider = document.querySelector('.modal-slider');
                 modalSlider.addEventListener('mouseenter', () => clearInterval(sliderInterval));
                 modalSlider.addEventListener('mouseleave', startInterval);
             }
-            
+
             modal.classList.add('active');
         });
     });
@@ -299,12 +299,12 @@ if (filterBtns.length > 0 && galleryItems.length > 0) {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const filterValue = btn.getAttribute('data-filter');
-            
+
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                
+
                 if (filterValue === 'all' || filterValue === category) {
                     item.classList.remove('hidden');
                     item.animate([
